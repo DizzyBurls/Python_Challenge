@@ -1,6 +1,7 @@
 
 import os
 import csv
+import string
 
 csvpath = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyPoll\Resources\election_data.csv')
 
@@ -42,23 +43,30 @@ with open(csvpath, encoding='utf') as csvfile:
     if found is False:
         print("No candidate matches that description.")
 
-#print(Candidate)
-cleaned_election_csv = zip(VoterID, County, Candidate)
+#cleaned_election_csv = zip(VoterID, County, Candidate)
 
-output_path = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyPoll\cleaned_election_data.csv')
+#output_path = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyPoll\cleaned_election_data.csv')
 
-with open(output_path, "w", newline='') as csvfile:
-    writer = csv.writer(csvfile)
+#with open(output_path, "w", newline='') as csvfile:
+    #writer = csv.writer(csvfile)
 
-    writer.writerow(['Voter_ID', 'County', 'Candidate'])
+    #writer.writerow(['Voter_ID', 'County', 'Candidate'])
 
-    writer.writerows(cleaned_election_csv)
+    #writer.writerows(cleaned_election_csv)
 
-# Print the number of votes the candidate received.
+# Print the number of votes each candidate received.
+    for eachname in DifferentCandidates:
+        print(OverallVotes.count(eachname))
 
+# Print the number of candidates.
 print(len(DifferentCandidates))
+
+# Print the name of each candidate.
 print(DifferentCandidates)
-print(len(Candidate))
+
+#print(len(Candidate))
+
+#Print the overall number of votes.
 print(len(OverallVotes))
 
 
