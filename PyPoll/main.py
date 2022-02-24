@@ -3,7 +3,8 @@ import os
 import csv
 import string
 
-file=open('Election_Results.txt','w')
+WriteFile="C:\\Users\\chris\\Documents\\Data Analytics Bootcamp\\Homework Tasks\\Homework Task 3\\Python_Challenge\\PyPoll\\Analysis\\Election_results.txt"
+file=open(WriteFile, "w")
 
 file.write('Election Results:\n')
 file.write('-------------------------------------------------------\n')
