@@ -3,10 +3,19 @@ import os
 import csv
 import string
 
+# Stipulate the location of the CSV file housing the data to be analysed.
+
 csvpath = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyPoll\Resources\election_data.csv')
+
+# Establish lists to populate:
 
 OverallVotes=[]
 DifferentCandidates = []
+
+print("Election Results")
+print("--------------------------------------------------")
+
+# Read the CSV file:
 
 with open(csvpath, encoding='utf') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -15,7 +24,7 @@ with open(csvpath, encoding='utf') as csvfile:
     
     csv_header = next(csvfile)
 
-    #Count the total number of votes cast.
+    # Count the total number of votes cast.
 
     for row in csvreader:
         OverallVotes.append(row[2])
@@ -23,18 +32,23 @@ with open(csvpath, encoding='utf') as csvfile:
         if (row[2]) not in DifferentCandidates:
             DifferentCandidates.append(row[2])
 
-# Print the percentage and number of votes each candidate received.
+    # Print the overall number of votes cast in the election.
+
+    print(f"Total Votes: {len(OverallVotes)}")
+    print("--------------------------------------------------")
+
+    # Print the percentage and number of votes each candidate received.
+
     for eachname in DifferentCandidates:
-        print(f"{eachname} received {OverallVotes.count(eachname)} votes.")
-        print(f"This represents {100*OverallVotes.count(eachname)/len(OverallVotes)}% of the votes.")
+        
+        percentage=100*OverallVotes.count(eachname)/len(OverallVotes)
+        rounded=round(percentage, 3)
+        print(f"{eachname}: {rounded}% ({OverallVotes.count(eachname)})")
 
-# Print the number of candidates.
-print(f"There were a total of {len(DifferentCandidates)} candidates running for office.")
-
-#Print the overall number of votes cast in the election.
-print(f"There were a total of {len(OverallVotes)} votes cast in this election.")
-
+# Find the election winner using a dictionary:
 occurences={}
+
+# Set up a count:
 
 for name in OverallVotes:
     if name in occurences.keys():
@@ -42,8 +56,15 @@ for name in OverallVotes:
     else:
         occurences[name] = 1
 
+#Find the maxmium number of occurences and the corresponding key in the dictionary:
+
 (max(occurences.keys(), key=occurences.get))
-print(f"The winner of the election was {max(occurences.keys(), key=occurences.get)}")
+
+# Print the winner's name.
+
+print("--------------------------------------------------")
+print(f"Winner: {max(occurences.keys(), key=occurences.get)}")
+print("--------------------------------------------------")
 
 
 
