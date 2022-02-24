@@ -3,6 +3,11 @@ import os
 import csv
 import string
 
+file=open('Election_Results.txt','w')
+
+file.write('Election Results:\n')
+file.write('-------------------------------------------------------\n')
+
 # Stipulate the location of the CSV file housing the data to be analysed.
 
 csvpath = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyPoll\Resources\election_data.csv')
@@ -34,7 +39,12 @@ with open(csvpath, encoding='utf') as csvfile:
 
     # Print the overall number of votes cast in the election.
 
-    print(f"Total Votes: {len(OverallVotes)}")
+    VotesCast=len(OverallVotes)
+
+    print(f"Total Votes: {VotesCast}")
+    file.write('Total Votes Cast: ')
+    file.write(str(VotesCast))
+    file.write('\n-------------------------------------------------------\n')
     print("--------------------------------------------------")
 
     # Print the percentage and number of votes each candidate received.
@@ -42,8 +52,17 @@ with open(csvpath, encoding='utf') as csvfile:
     for eachname in DifferentCandidates:
         
         percentage=100*OverallVotes.count(eachname)/len(OverallVotes)
-        rounded=round(percentage, 3)
-        print(f"{eachname}: {rounded}% ({OverallVotes.count(eachname)})")
+        RoundedPercentage=round(percentage, 3)
+
+        IndCandidateVotes=OverallVotes.count(eachname)
+        print(f"{eachname}: {RoundedPercentage}% ({IndCandidateVotes})")
+
+        file.write(eachname)
+        file.write(': ')
+        file.write(str(RoundedPercentage))
+        file.write('% (')
+        file.write(str(IndCandidateVotes))
+        file.write(')\n')
 
 # Find the election winner using a dictionary:
 occurences={}
@@ -58,19 +77,20 @@ for name in OverallVotes:
 
 #Find the maxmium number of occurences and the corresponding key in the dictionary:
 
-(max(occurences.keys(), key=occurences.get))
+Winner=(max(occurences.keys(), key=occurences.get))
 
 # Print the winner's name.
 
 print("--------------------------------------------------")
-print(f"Winner: {max(occurences.keys(), key=occurences.get)}")
+print(f"Winner: {Winner}")
 print("--------------------------------------------------")
 
+Winner=(max(occurences.keys(), key=occurences.get))
 
-
-
-
-
+file.write('-------------------------------------------------------\n')
+file.write('Winner: ')
+file.write(Winner)
+file.close()
 
 
 
