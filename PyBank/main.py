@@ -3,11 +3,11 @@ import os
 import csv
 import string
 
-# WriteFile="C:\\Users\\chris\\Documents\\Data Analytics Bootcamp\\Homework Tasks\\Homework Task 3\\Python_Challenge\\PyBank\\Analysis\\Bank_results.txt"
-# file=open(WriteFile, "w")
+WriteFile="C:\\Users\\chris\\Documents\\Data Analytics Bootcamp\\Homework Tasks\\Homework Task 3\\Python_Challenge\\PyBank\\Analysis\\Bank_results.txt"
+file=open(WriteFile, "w")
 
-# file.write('Bank Results:\n')
-# file.write('-------------------------------------------------------\n')
+file.write('Bank Results:\n')
+file.write('-------------------------------------------------------\n')
 
 # Stipulate the location of the CSV file housing the data to be analysed.
 
@@ -57,26 +57,7 @@ difference(PandLList)
 AverageProf=(sum(DiffProf))/(len(MonthList)-1)
 print(AverageProf)
 
-# def average (DiffProf):
-#     Aggregate = 0.0
-#     quantity=NumMonths-1
-#     for number in numbers:
-#         Aggregate +- number
-#     return Aggregate
-#     mean=Aggregate/quantity
-        
-#print(type(PandLList))
-
-
-
-
-
- 
-
-
-
-    
-#file.close()
+file.close()
 
 
 
