@@ -19,7 +19,7 @@ print("--------------------------------------------------")
 # Read the CSV file:
 MonthList=[]
 PandLList=[]
-PandLChange=[]
+DiffProf=[]
 
 with open(csvpath, encoding='utf') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -45,20 +45,33 @@ def sum(numbers):
 
 # Test your function with the following:
 
-b = [float (a) for a in PandLList]
-
 TotalPandL=sum(PandLList)
-
 print(f"Total Profit and Loss: {TotalPandL}") 
 
-#print(PandLList)
+def difference (MonthList):
+    for i in range(1, len(MonthList)):
+        DiffProf.append(MonthList[i] - MonthList[i-1])
+
+difference(PandLList)
+
+AverageProf=(sum(DiffProf))/(len(MonthList)-1)
+print(AverageProf)
+
+# def average (DiffProf):
+#     Aggregate = 0.0
+#     quantity=NumMonths-1
+#     for number in numbers:
+#         Aggregate +- number
+#     return Aggregate
+#     mean=Aggregate/quantity
+        
 #print(type(PandLList))
 
 
 
 
 
-
+ 
 
 
 
