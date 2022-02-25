@@ -18,6 +18,8 @@ print("--------------------------------------------------")
 
 # Read the CSV file:
 MonthList=[]
+PandLList=[]
+PandLChange=[]
 
 with open(csvpath, encoding='utf') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -30,10 +32,28 @@ with open(csvpath, encoding='utf') as csvfile:
 
     for row in csvreader:
         MonthList.append(row[0])
-
+        PandLList.append(int(row[1]))
+    
     NumMonths=len(MonthList)
-
     print(f"Total Months: {NumMonths}")
+
+def sum(numbers):
+    Aggregate = 0.0
+    for number in numbers:
+        Aggregate += number
+    return Aggregate
+
+# Test your function with the following:
+
+b = [float (a) for a in PandLList]
+
+TotalPandL=sum(PandLList)
+
+print(f"Total Profit and Loss: {TotalPandL}") 
+
+#print(PandLList)
+#print(type(PandLList))
+
 
 
 
