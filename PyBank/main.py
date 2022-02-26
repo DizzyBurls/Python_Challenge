@@ -3,7 +3,7 @@ import os
 import csv
 import string
 
-# Stipulate the location of the CSV file housing the data to be analysed.
+# Stipulate the location of the CSV file which houses the data to be analysed.
 
 csvpath = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyBank\Resources\budget_data.csv')
 

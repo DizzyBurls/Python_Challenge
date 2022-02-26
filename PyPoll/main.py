@@ -11,7 +11,7 @@ file=open(WriteFile, "w")
 file.write('Election Results:\n')
 file.write('-------------------------------------------------------\n')
 
-# Stipulate the location of the CSV file housing the data to be analysed.
+# Stipulate the location of the CSV file which houses the data to be analysed.
 
 csvpath = os.path.join(r'C:\Users\chris\Documents\Data Analytics Bootcamp\Homework Tasks\Homework Task 3\Python_Challenge\PyPoll\Resources\election_data.csv')
 
