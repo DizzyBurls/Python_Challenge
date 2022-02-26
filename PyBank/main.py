@@ -102,7 +102,7 @@ print(f"Greatests Decrease in Profits: {MonthList[iMin+1]} (${MaxDecrease})")
 
 # Write results to text file.
 
-WriteFile="C:\\Users\\chris\\Documents\\Data Analytics Bootcamp\\Homework Tasks\\Homework Task 3\\Python_Challenge\\PyBank\\Analysis\\Bank_Results.txt"
+WriteFile="C:\\Users\\chris\\Documents\\Data Analytics Bootcamp\\Homework Tasks\\Homework Task 3\\Python_Challenge\\PyBank\\Analysis\\Financial_Analysis.txt"
 file=open(WriteFile, "w")
 
 file.write('Financial Analysis:\n')
